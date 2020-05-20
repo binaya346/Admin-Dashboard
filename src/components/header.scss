@@ -1,0 +1,106 @@
+$primary-color: #3c8dbc;
+$secondary-color: #232d33;
+$tertiary-color: #367fa9;
+.main-header {
+  position: relative;
+  height: 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .logo {
+    overflow: hidden;
+    background-color: $tertiary-color;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 300ms ease-in-out 100ms;
+    .logo-sm {
+      font-size: 18px;
+    }
+    .logo-lg {
+      font-size: 24px;
+    }
+  }
+  .logo-mini {
+    width: 50px;
+  }
+  .navbar {
+    margin-left: 230px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    background-color: $primary-color;
+    font-size: 16px;
+    height: 100%;
+    transition: margin-left 300ms ease-in-out 100ms;
+    .sidebar-toggle {
+      height: 100%;
+      display: flex;
+      cursor: pointer;
+      width: 50px;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background-color: $tertiary-color;
+      }
+      .md {
+        font-size: 20px;
+      }
+    }
+    .navbar-menu {
+      display: flex;
+      .navbar-item {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 15px;
+        justify-content: center;
+        &:hover {
+          background-color: $tertiary-color;
+        }
+        .md {
+          font-size: 20px;
+        }
+        .navbar-item-count {
+          font-weight: 600;
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          padding: 2px 3px;
+          background-color: #f39d25;
+          font-size: 9px;
+          border-radius: 2px;
+        }
+        .user-menu {
+          display: flex;
+          align-items: center;
+          .user-avatar {
+            img {
+              height: 25px;
+              width: 25px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+          .user-name {
+            font-size: 14px;
+            padding-left: 8px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+  .full-width-navbar {
+    margin-left: 50px;
+  }
+}
