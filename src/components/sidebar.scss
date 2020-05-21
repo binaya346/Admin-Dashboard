@@ -1,0 +1,19 @@
+$primary-color: #3c8dbc;
+$secondary-color: #222d32;
+$hover-color: #1e282c;
+.main-sidebar {
+  position: absolute;
+  width: 230px;
+  background-color: $secondary-color;
+  padding-top: 50px;
+  color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: -1;
+  top: 0;
+  min-height: 100vh;
+  transition: width 300ms ease-in-out 100ms;
+}
+.main-sidebar-mini {
+  width: 50px;
+}

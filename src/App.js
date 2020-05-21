@@ -1,8 +1,17 @@
 import React from "react";
-import Header from "./components/header";
+import Dashboard from "./components/dashboard";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-  return <Header />;
+  return (
+    <Router>
+      <Switch>
+        <Route path="/dashboard" exact>
+          <Dashboard />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;

@@ -1,0 +1,25 @@
+$primary-color: #3c8dbc;
+$hover-color: #1e282c;
+a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $hover-color;
+  }
+  .sidebar-item-mini {
+    .md {
+      font-size: 16px;
+    }
+  }
+}
+.active-sidebar {
+  border-left: 3px solid $primary-color;
+  background-color: $hover-color;
+}

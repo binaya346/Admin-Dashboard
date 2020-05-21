@@ -1,29 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import "./header.scss";
 
-const Header = () => {
-  const [displaySidebar, setDisplaySidebar] = useState(true);
-  const handleToggleClick = () => {
-    setDisplaySidebar(!displaySidebar);
-  };
+const Header = (props) => {
   return (
     <header className="main-header">
-      <a className={`logo ${displaySidebar ? "" : "logo-mini"}`} href="/">
+      <a className={`logo ${props.displaySidebar ? "" : "logo-mini"}`} href="/">
         <span
           className="logo-lg"
-          style={{ display: displaySidebar ? "block" : "none" }}
+          style={{ display: props.displaySidebar ? "block" : "none" }}
         >
           Dashboard
         </span>
         <span
           className="logo-sm"
-          style={{ display: displaySidebar ? "none" : "block" }}
+          style={{ display: props.displaySidebar ? "none" : "block" }}
         >
           AD
         </span>
       </a>
-      <nav className={`navbar ${displaySidebar ? "" : "full-width-navbar"}`}>
-        <div className="sidebar-toggle" onClick={handleToggleClick}>
+      <nav
+        className={`navbar ${props.displaySidebar ? "" : "full-width-navbar"}`}
+      >
+        <div className="sidebar-toggle" onClick={props.handleClick}>
           <ion-icon name="menu"></ion-icon>
         </div>
         <div className="navbar-menu">

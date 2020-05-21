@@ -1,0 +1,41 @@
+$primary-color: #3c8dbc;
+$hover-color: #1e282c;
+a {
+  display: flex;
+  color: #fff;
+  padding: 10px;
+  border-left: 3px solid transparent;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  justify-content: space-between;
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: capitalize;
+    &:hover {
+      background-color: $hover-color;
+    }
+    .md {
+      font-size: 16px;
+    }
+    .sidebar-item-title {
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+  }
+  .sidebar-item-icon {
+    color: #fff;
+    font-size: 20px;
+    transition: transform 300ms ease-in-out;
+  }
+  .below {
+    transform: rotate(-90deg);
+  }
+}
+.active-sidebar {
+  border-left: 3px solid $primary-color;
+  background-color: $hover-color;
+}
