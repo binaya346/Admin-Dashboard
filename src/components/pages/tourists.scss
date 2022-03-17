@@ -1,0 +1,45 @@
+.list-wrap {
+  .list-title {
+    font-size: 21px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 12px;
+    margin: 20px;
+  }
+  .input-label-wrapper {
+    margin: 12px 20px;
+    label {
+      font-size: 14px;
+      padding-bottom: 8px;
+      display: block;
+      font-weight: 600;
+    }
+    input,
+    select {
+      border: 1px solid #d9d9d9;
+      border-radius: 5px;
+      line-height: 36px;
+      padding: 0 8px;
+      outline: none;
+      background-color: #fff;
+      width: 100%;
+    }
+    select {
+      height: 36px;
+    }
+  }
+  .input-submit {
+    width: 100%;
+    border: 0;
+    background-color: #4885ed;
+    color: #fff;
+    font-size: 18px;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 25px auto 0;
+    max-width: 400px;
+    display: block;
+  }
+}

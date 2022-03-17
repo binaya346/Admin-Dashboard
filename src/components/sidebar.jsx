@@ -11,9 +11,9 @@ const Sidebar = (props) => {
       slug: "dashboard",
     },
     {
-      title: "charts",
+      title: "tourists",
       icon: <ion-icon name="layers"></ion-icon>,
-      slug: "charts",
+      slug: "tourists",
     },
     {
       title: "layouts options",

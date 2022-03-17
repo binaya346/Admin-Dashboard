@@ -1,0 +1,15 @@
+main.dashboard-content {
+  width: calc(100vw - 230px);
+  height: calc(100vh - 50px);
+  transform: translateX(230px);
+  padding: 20px 10px;
+  transition: all 300ms ease-in-out 100ms;
+  background-color: #eaeaea;
+  padding: 20px 12px;
+}
+
+main.mini-sidebar.dashboard-content {
+  transform: translateX(50px);
+  width: calc(100vw - 50px);
+  transition: all 300ms ease-in-out 100ms;
+}
