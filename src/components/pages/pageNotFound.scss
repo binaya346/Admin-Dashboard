@@ -1,0 +1,16 @@
+.pageNotFound {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  h1 {
+    font-size: 120px;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+  }
+  h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+}

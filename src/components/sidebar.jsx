@@ -53,9 +53,9 @@ const Sidebar = (props) => {
       }`}
     >
       {props.displaySidebar ? (
-        <SidebarItemList data={data} />
+        <SidebarItemList user={props.user} data={data} />
       ) : (
-        <SidebarItemMiniList data={data} />
+        <SidebarItemMiniList user={props.user} data={data} />
       )}
     </aside>
   );

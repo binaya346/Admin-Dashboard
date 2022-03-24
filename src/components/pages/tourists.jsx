@@ -135,7 +135,7 @@ const Tourists = () => {
           />
         </div>
         <div className="input-label-wrapper">
-          <label for="phone">Phone</label>
+          <label>Phone</label>
           <input
             type="number"
             placeholder="phone"

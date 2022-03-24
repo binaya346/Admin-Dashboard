@@ -10,7 +10,7 @@ const SidebarItemList = (props) => {
           <img src="images/user.jpeg" alt="user" />
         </div>
         <div className="user-info">
-          <div className="user-name">Binaya Rijal</div>
+          <div className="user-name">{props.user?.firstName}</div>
           Online
         </div>
       </div>

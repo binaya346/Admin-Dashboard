@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./header.scss";
+import { logout } from "./helper/utils";
+import { withRouter } from "react-router-dom";
 
 const Header = (props) => {
+  const handleLogout = () => {
+    const response = logout();
+    if (response) {
+      props.history.push("/admin");
+    }
+  };
+
   return (
     <header className="main-header">
       <a className={`logo ${props.displaySidebar ? "" : "logo-mini"}`} href="/">
@@ -42,11 +51,11 @@ const Header = (props) => {
               <div className="user-avatar">
                 <img src="images/user.jpeg" alt="user" />
               </div>
-              <div className="user-name">Binaya Rijal</div>
+              <div className="user-name">{props.user?.email}</div>
             </div>
           </div>
-          <div className="navbar-item">
-            <ion-icon name="construct"></ion-icon>
+          <div className="navbar-item" onClick={handleLogout}>
+            <ion-icon name="log-out"></ion-icon>
           </div>
         </div>
       </nav>
@@ -54,4 +63,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
