@@ -3,6 +3,8 @@ import Header from "./header";
 import Sidebar from "./sidebar";
 import withSizes from "react-sizes";
 import { getUser } from "./helper/utils";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MainLayout = (props) => {
   const { children, isMobile } = props;
@@ -27,6 +29,7 @@ const MainLayout = (props) => {
 
   return (
     <div style={{ position: "relative" }}>
+      <ToastContainer />
       <Header
         displaySidebar={displaySidebar}
         handleClick={handleToggleClick}

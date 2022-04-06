@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Select from "react-select";
 import { API_HOST } from "../../consts";
 import CrudWrapper from "../crudWrapper";
 import MainLayout from "../mainLayout";
@@ -25,7 +26,10 @@ const Tourists = () => {
     password: "",
     confirmPassword: "",
     isTourist: true,
+    country: "",
   });
+
+  const [countries, setCountries] = useState([]);
 
   const getAllTourists = async () => {
     try {
@@ -43,8 +47,33 @@ const Tourists = () => {
     }
   };
 
+  const getAllCountries = async () => {
+    try {
+      const response = await fetch(`${API_HOST}geo/countries`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await response.json();
+      let countries = [...data.data];
+      // let countries = [];
+      console.log(countries);
+      for (let i = 0; i < data.data.length; i++) {
+        countries[i].label = data.data[i].name;
+        countries[i].value = data.data[i].name;
+        countries[i].id = data.data[i].id;
+      }
+      setCountries(countries);
+    } catch (err) {
+      console.log(err, "error");
+    }
+  };
+
   useEffect(() => {
     getAllTourists();
+    getAllCountries();
   }, []);
 
   const handlePostData = (key, value) => {
@@ -54,6 +83,7 @@ const Tourists = () => {
   const handleSubmit = async () => {
     const postData = { ...postTourist };
     delete postData.confirmPassword;
+    console.log(postData, "postData");
     try {
       const response = await fetch(`${API_HOST}auth/register`, {
         method: "POST",
@@ -66,6 +96,18 @@ const Tourists = () => {
       if (data) {
         handleAppendData(data);
       }
+      setPostTourist({
+        firstName: "",
+        lastName: "",
+        email: "",
+        gender: "",
+        phone: "",
+        address: "",
+        password: "",
+        confirmPassword: "",
+        isTourist: true,
+        country: "",
+      });
     } catch (err) {
       console.log(err, "error");
     }
@@ -82,18 +124,32 @@ const Tourists = () => {
       gender,
     };
     tempData.push(obj);
-    console.group(tempData, "tempData");
     setTourists(tempData);
   };
 
+  const handleCountryChange = (e) => {
+    setPostTourist({ ...postTourist, country: e.id });
+  };
   const read = (
     <div className="list-wrap">
       <h3 className="list-title">All Tourists</h3>
       <ul className="list">
-        {tourists.map((item) => (
+        <li className="list-item">
+          <div className="sn heading">Sn</div>
+          <div className="heading">Full Name</div>
+          <div className="heading">Gender</div>
+          <div className="heading">Email</div>
+          <div className="heading">Country</div>
+        </li>
+        {tourists.map((item, index) => (
           <li key={item.id} className="list-item">
-            <span>{item.id}.</span> <span>{item.firstName}</span>{" "}
-            <span>{item.email}</span>
+            <div className="sn">{index + 1}.</div>
+            <div>
+              {item.firstName} {item.lastName}
+            </div>
+            <div>{item.gender}</div>
+            <div>{item.email}</div>
+            <div>{item.user_country?.name}</div>
           </li>
         ))}
       </ul>
@@ -144,6 +200,18 @@ const Tourists = () => {
             onChange={(e) => handlePostData(e.target.name, e.target.value)}
           />
         </div>
+        <div className="input-label-wrapper">
+          <label>Country</label>
+          <Select
+            className="basic-single"
+            classNamePrefix="select"
+            isSearchable={true}
+            name="country"
+            options={countries}
+            onChange={handleCountryChange}
+          />
+        </div>
+
         <div className="input-label-wrapper">
           <label>Password</label>
           <input

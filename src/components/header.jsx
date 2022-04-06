@@ -35,22 +35,10 @@ const Header = (props) => {
         </div>
         <div className="navbar-menu">
           <div className="navbar-item">
-            <ion-icon name="mail-outline"></ion-icon>
-            <div className="navbar-item-count">4</div>
-          </div>
-          <div className="navbar-item">
-            <ion-icon name="flag-outline"></ion-icon>
-            <div className="navbar-item-count">10</div>
-          </div>
-          <div className="navbar-item">
-            <ion-icon name="notifications-outline"></ion-icon>
-            <div className="navbar-item-count">9</div>
-          </div>
-          <div className="navbar-item">
             <div className="user-menu">
-              <div className="user-avatar">
+              {/* <div className="user-avatar">
                 <img src="images/user.jpeg" alt="user" />
-              </div>
+              </div> */}
               <div className="user-name">{props.user?.email}</div>
             </div>
           </div>

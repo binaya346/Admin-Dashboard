@@ -6,13 +6,13 @@ const SidebarItemList = (props) => {
   return (
     <>
       <div className="sidebar-user-panel">
-        <div className="user-avatar">
+        {/* <div className="user-avatar">
           <img src="images/user.jpeg" alt="user" />
-        </div>
-        <div className="user-info">
+        </div> */}
+        {/* <div className="user-info">
           <div className="user-name">{props.user?.firstName}</div>
           Online
-        </div>
+        </div> */}
       </div>
       {props.data.map((item, i) => (
         <SidebarItem

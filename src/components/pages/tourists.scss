@@ -43,3 +43,30 @@
     display: block;
   }
 }
+
+.quill-wrapper {
+  height: 100%;
+  .quill {
+    height: 85%;
+    .ql-container {
+      height: calc(100% - 120px);
+    }
+  }
+  .empty-quill {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    font-size: 21px;
+  }
+  .sn {
+    padding: 8px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .quill-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+}

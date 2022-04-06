@@ -2,7 +2,7 @@ import React from "react";
 import { getToken } from "./utils";
 import { Route, Redirect } from "react-router-dom";
 
-const PublicRouter = ({ component: Component, ...rest }) => {
+const PublicRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
@@ -21,4 +21,4 @@ const PublicRouter = ({ component: Component, ...rest }) => {
   );
 };
 
-export default PublicRouter;
+export default PublicRoute;

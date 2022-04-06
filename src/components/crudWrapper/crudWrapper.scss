@@ -9,9 +9,54 @@
     border-right: 1px solid #d9d9d9;
     background-color: #fff;
     border-radius: 5px;
+    .list {
+      margin: 8px 15px;
+      list-style-type: none;
+      li {
+        margin: 12px 0;
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #d9d9d9;
+        div {
+          flex: 1;
+          font-size: 14px;
+        }
+        div.sn {
+          width: 30px;
+          flex: unset;
+        }
+        div.sn-lg {
+          width: 50px;
+          flex: unset;
+          display: grid;
+          place-items: center;
+          cursor: pointer;
+          img {
+            height: 25px;
+          }
+        }
+        .heading {
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+        &:first-child {
+          border-top: 1px solid #d9d9d9;
+        }
+      }
+    }
   }
   .crud-create {
     background-color: #fff;
     border-radius: 5px;
   }
+}
+
+.update-btn {
+  background-color: #3c8dbc;
+  color: #fff;
+  padding: 8px 0;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
 }

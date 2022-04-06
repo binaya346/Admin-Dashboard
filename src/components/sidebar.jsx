@@ -16,34 +16,9 @@ const Sidebar = (props) => {
       slug: "tourists",
     },
     {
-      title: "layouts options",
+      title: "Landmark",
       icon: <ion-icon name="pie-chart"></ion-icon>,
-      slug: "layouts",
-    },
-    {
-      title: "Ui Elements",
-      icon: <ion-icon name="desktop-outline"></ion-icon>,
-      slug: "ui-elements",
-    },
-    {
-      title: "calender",
-      icon: <ion-icon name="calendar-outline"></ion-icon>,
-      slug: "calender",
-    },
-    {
-      title: "mailbox",
-      icon: <ion-icon name="mail"></ion-icon>,
-      slug: "mailbox",
-    },
-    {
-      title: "miltilevel",
-      icon: <ion-icon name="arrow-redo"></ion-icon>,
-      slug: "multilevel",
-    },
-    {
-      title: "example",
-      icon: <ion-icon name="folder"></ion-icon>,
-      slug: "example",
+      slug: "landmark",
     },
   ];
   return (
